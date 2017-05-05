@@ -18,8 +18,7 @@ var rand={
 	//todo
 	decimal:function(decimallength){},
 	char:function(){
-		var code=rand.fromTo(33,126);
-		return String.fromCharCode(code);
+		return String.fromCharCode(rand.fromTo(33,126));
 	},
 	specialChar:function(){
 		var code=rand.inRanges([[33,47],[58,64],[91,96],[123,126]]);
@@ -30,11 +29,11 @@ var rand={
 		return String.fromCharCode(code);
 	},
 	upperLetter:function(){
-		var code=code=rand.fromTo(65,90);
+		var code=rand.fromTo(65,90);
 		return String.fromCharCode(code);
 	},
 	lowerLetter:function(){
-		var code=code=rand.fromTo(97,122);
+		var code=rand.fromTo(97,122);
 		return String.fromCharCode(code);
 	},
 	string:function(length,opt){
@@ -62,7 +61,7 @@ var rand={
 	    
 	},
 	//todo
-	ip:function(){
+	ip:function(pattern){//pattern = "10.30.*.*"
 	    
 	},
 	card:function(mode){//Need implements for Joker and Black/Red
