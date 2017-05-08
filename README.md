@@ -1,6 +1,7 @@
 # random_lib
  A tiny Javascript library for generate any random stuffs.
- Just call rand.func()
+ 
+ Just call `rand.func()`
  
  **1. Basic functions:**
   * fromTo(f,t): pick a random number from "f" to "t".
