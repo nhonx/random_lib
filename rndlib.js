@@ -1,4 +1,14 @@
 var rand={
+	_set:[],
+	customSet:function(set){
+		this._set=set;
+	},
+	addToCustomSet:function(ele){
+		this._set.push(ele);
+	},
+	om:function(){
+		return this.pickIn(this._set);
+	}
 	fromTo:function(from, to) {
     return Math.floor(Math.random() * (to - from + 1)) + from;
 	},
@@ -57,8 +67,7 @@ var rand={
 	    for(var i=1;i<=6;i++){
 	       rs.push(rand.pickIn(a)); 
 	    }
-	    return "#"+rs.join('');
-	    
+	    return "#"+rs.join('');	    
 	},
 	//todo
 	ip:function(pattern){//pattern = "10.30.*.*"
