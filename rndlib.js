@@ -8,7 +8,7 @@ var rand={
 	},
 	om:function(){
 		return this.pickIn(this._set);
-	}
+	},
 	fromTo:function(from, to) {
     return Math.floor(Math.random() * (to - from + 1)) + from;
 	},
