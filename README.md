@@ -5,14 +5,23 @@
   * `fromTo(f,t)`: pick a random number from "f" to "t".
   * `pickIn(arr)`: pick a random element in an array.
   * `inRanges(arr)`: pick a random number in a number of given ranges.
-    Exp: `rand.inRanges([[1,5],[7,15]])` give a random number between (1,5) and (7,15)
+    Exp: `rand.inRanges([[1,5],[7,15]])` give a random number between (1,5) and between (7,15)
   2. Characters:
   * `char()`: generate a random character
+  * `digit()`: generate a random digit number from 0-9
   * `specialChar()`: 
   * `letter()`: generate a random character from a-z, can be capital or not
   * `upperLetter()`: no need to explain
   * `lowerLetter()`: same above
-  * `string(length,option)`:
+  * `string(length,option)`: generate a random string with customize option
+  ```json
+  {
+    number: true,
+    lower: true,
+    upper: true,
+    special: true
+  }
+  ```
   3. Number:
   * `integer()`
   * `decimal(length)`
