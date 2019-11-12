@@ -14,20 +14,16 @@
   * `upperLetter()`: no need to explain
   * `lowerLetter()`: same above
   * `string(length,option)`: generate a random string with customize option
-  ```json
-  {
-    number: true,
-    lower: true,
-    upper: true,
-    special: true
-  }
-  ```
-  3. Number:
-  * `integer()`
-  * `decimal(length)`
-  4. Misclaneous:
+    ```json
+    {
+      number: true,
+      lower: true,
+      upper: true,
+      special: true
+    }
+    ```
+  3. Misclaneous:
   * `color()`: return hexadecimal code of a random color
-  * `ip(pattern)`: return a random ip address by given pattern.
   * `card(mode)`: pick a random card in a deck
   
   

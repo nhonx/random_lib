@@ -1,0 +1,22 @@
+{
+  "name": "rand-lib",
+  "version": "1.0.0",
+  "description": "A library to randomly generate every stuffs from general things like number,character,...to freaky things like poker cards.",
+  "main": "rand.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhonx/random_lib.git"
+  },
+  "keywords": [
+    "random","generator","rnd","shuffle"
+  ],
+  "author": "nhonx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nhonx/random_lib/issues"
+  },
+  "homepage": "https://github.com/nhonx/random_lib#readme"
+}
