@@ -24,10 +24,10 @@
   * `string(length,option)`: generate a random string with customize option
     ```json
     {
-      number: true,
-      lower: true,
-      upper: true,
-      special: true
+      "number": true,
+      "lower": true,
+      "upper": true,
+      "special": true
     }
     ```
   3. Misclaneous:
