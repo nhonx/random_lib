@@ -18,16 +18,41 @@
 
     /**
      * =================================================
+     * Random your stuffs in a JS chaining way
+     * rand.give([3,5,1,6,2]).pick() -> 4
+     * rand.give([3,5,1,6,2]).shuffle() -> Shuffled array by Knuth shuffle.
      **/
+    rand.give = function (arr) {
+        return (function (_a) {
+            var give = function (a) {
+                this._set = a;
+                this.pick = function () {
+                    return rand.pickIn(this._set);
+                }
+                this.shuffle = function () {
+                    var array = [...this._set];
+                    for (var i = array.length - 1; i > 0; i--) {
+                        var j = Math.floor(Math.random() * (i + 1));
+                        var temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                    return array;
+                }
+                return this;
+            }
+            return give(_a);
+        })(arr);
+    }
     /**
     Generate random number from multi specific ranges.
     E.g: pick a random num which is between 0-30 and 50-70: rand.inRanges([[0,30],[50,70]])
     **/
     rand.fromTo = function (from, to) {
-        return Math.floor(Math.random() * (to - from + 1)) + from;
+        return from <= to ? Math.floor(Math.random() * (to - from + 1)) + from : null;
     };
     rand.pickIn = function (array) {
-        if (array == null || array.length == 0) return;
+        if (array == null || array.length == 0) return null;
         return array[rand.fromTo(0, array.length - 1)];
     };
     /**
@@ -41,6 +66,30 @@
         }
         return rand.pickIn(final_arr);
     };
+    /**
+    Generate corresponding integer 
+    **/
+    rand.int8 = function (format) {
+        return rand.pickIn([1, -1]) * rand.fromTo(0, 128);
+    }
+    rand.uint8 = function (format) {
+        return rand.fromTo(0, 255);
+    }
+    rand.int16 = function (format) {
+        return rand.pickIn([1, -1]) * rand.fromTo(0, 32768);
+    }
+    rand.uint16 = function (format) {
+        return rand.fromTo(0, 65535);
+    }
+    rand.int32 = function (format) {
+        return rand.pickIn([1, -1]) * rand.fromTo(0, 2147483648);
+    }
+    rand.uint32 = function (format) {
+        return rand.fromTo(0, 4294967295);
+    }
+    /**
+     *
+     */
     rand.color = function () {
         var a = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
         var rs = [];
@@ -124,6 +173,16 @@
         var type = mode == "short" ? ["S", "H", "D", "C"] : (mode == "symbol" ? ["♠", "♥", "♦", "♣"] : ["Spade", "Heart", "Diamond", "Club"]);
         return rand.pickIn(num) + (mode != "symbol" ? "." : "") + rand.pickIn(type);
     };
+    /**
+     * UUID v4
+     */
+    rand.uuid = function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0,
+                v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
     /**
      * =================================================
      **/
