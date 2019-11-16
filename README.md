@@ -9,7 +9,7 @@
     rand.string(12, { number:true, lower:true}); //mwzj338km816
     ```
 ## Features:
-  1. Basic functions:
+  1. **Basic functions**:
   * `fromTo(f,t)`: pick a random number from "f" to "t".
   * `pickIn(arr)`: pick a random element in an array.
   * `inRanges(arr)`: pick a random number in a number of given ranges.
@@ -17,12 +17,12 @@
   * `rand.give(arr).<func>()`: prepare your custom set/array and give you ability to chaining next with `pick()` and `shuffle()`.  
     E.g: `rand.give(['rock','paper','scissor']).pick();`  
          `rand.give([2,4,5,6,7]).shuffle();`
-  2. Numbers:
+  2. **Numbers**:
   * Currently support random integer up to 32-bit with signed/unsigned type.  
     E.g:  
     - `rand.int8()` / `rand.uint8()`  
     - `rand.int16()` / `rand.uint16()`
-  3. Characters:
+  3. **Characters**:
   * `char()`: generate a random character
   * `digit()`: generate a random digit number from 0-9
   * `specialChar()`: 
@@ -38,7 +38,7 @@
       "special": true
     }
     ```
-  4. Misclaneous:
+  4. **Misclaneous**:
   * `uuid()`: return a random UUID (v4).
   * `color()`: return hexadecimal code of a random color
   * `card(mode)`: pick a random card in a deck
