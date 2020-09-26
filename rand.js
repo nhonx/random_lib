@@ -98,6 +98,38 @@
         }
         return "#" + rs.join('');
     };
+    /**
+     * Generate a contrasting color of input hexcolor. Useful when we need to generate a color scheme for chart/graph or a color pair for background/text color.
+     **/
+    rand.contrastColor = function (hexcolor) {
+	    let rgbToYIQ = function (a) {
+		    return ((a.r * 299) + (a.g * 587) + (a.b * 114)) / 1000;
+	    }
+	    let hexToRgb =  function (hex) {
+		    if (!hex || hex === undefined || hex === '') {
+			    return undefined;
+		    }
+		    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+		    return result ? { r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16) } : undefined;
+	    }
+	    if(!hexcolor){
+		    return null;
+	    }
+	    let c = 0;
+	    var baseBright = rgbToYIQ(hexToRgb(hexcolor));
+	    let resultColor = baseBright >= 128 ? "#000000" : "#ffffff";
+	    while(c<200){
+		    let j = rand.color();
+		    let jBright = rgbToYIQ(hexToRgb(j));
+		    c++;
+		    if(Math.abs(baseBright-jBright) > 90)
+			resultColor = j;    
+		    	break;
+		    }
+	    }
+	   return j;
+
+    }
     rand.digit = function () {
         return rand.fromTo(0, 9);
     }
@@ -173,6 +205,9 @@
         var type = mode == "short" ? ["S", "H", "D", "C"] : (mode == "symbol" ? ["♠", "♥", "♦", "♣"] : ["Spade", "Heart", "Diamond", "Club"]);
         return rand.pickIn(num) + (mode != "symbol" ? "." : "") + rand.pickIn(type);
     };
+    rand.flipCoin = function (){
+    	return rand.pickIn(["head","tail"]);
+    }
     /**
      * UUID v4
      */
