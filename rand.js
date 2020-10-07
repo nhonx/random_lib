@@ -122,7 +122,7 @@
 		    let j = rand.color();
 		    let jBright = rgbToYIQ(hexToRgb(j));
 		    c++;
-		    if(Math.abs(baseBright-jBright) > 90)
+		    if(Math.abs(baseBright-jBright) > 90){
 			resultColor = j;    
 		    	break;
 		    }
