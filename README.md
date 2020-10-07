@@ -4,7 +4,7 @@ A tiny Javascript library for generate any random stuffs. It focus on how to qui
 
 ## Installations:
 
-* Run `npm install rand-lib` to install from NPM.
+* Run`npm install rand-lib` to install from NPM.
 * Usage:
   ```javascript
   var rand = require('rand-lib');
@@ -19,16 +19,15 @@ A tiny Javascript library for generate any random stuffs. It focus on how to qui
 * `fromTo(f,t)`: pick a random number from "f" to "t".
 * `pickIn(arr)`: pick a random element in an array.
 * `inRanges(arr)`: pick a random number in a number of given ranges.
-  E.g: `rand.inRanges([[1,5],[7,15]])` give a random number between (1,5) and between (7,15)
-* `rand.give(arr).<func>()`: prepare your custom set/array and give you ability to chaining next with `pick()` and `shuffle()`.
-  E.g: `rand.give(['rock','paper','scissor']).pick();`
-  `rand.give([2,4,5,6,7]).shuffle();`
+  E.g:`rand.inRanges([[1,5],[7,15]])` give a random number between (1,5) and between (7,15)
+* `rand.give(arr).<func>()`: prepare your custom set/array and give you ability to chaining next with`pick()` and`shuffle()`.
+  E.g:`rand.give(['rock','paper','scissor']).pick();``rand.give([2,4,5,6,7]).shuffle();`
 
 2. **Numbers**:
 
 * Currently support random integer up to 32-bit with signed/unsigned type.E.g:
-  - `rand.int8()` / `rand.uint8()`
-  - `rand.int16()` / `rand.uint16()`
+  - `rand.int8()` /`rand.uint8()`
+  - `rand.int16()` /`rand.uint16()`
 
 3. **Characters**:
 
@@ -54,6 +53,8 @@ A tiny Javascript library for generate any random stuffs. It focus on how to qui
 * `color()`: return hexadecimal code of a random color
 * `contrastColor(hexcolor)`: return a random color which is contrast to given color. It's useful when you need to generate a pair of background/foreground color or a set of color scheme for charts.
 * `card(mode)`: pick a random card in a deck.
-  * `mode`:
-    + `long`: *default* - "Spade", "Heart", "Diamond", "Club"
+  * `mode`: specify how we returned deck's 4 suits
+    * `long`: default - "Spade", "Heart", "Diamond", "Club"
+    * `short`: "S", "H", "D", "C"
+    * `symbol`: "♠", "♥", "♦", "♣"
 
