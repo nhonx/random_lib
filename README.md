@@ -52,9 +52,9 @@ A tiny Javascript library for generate any random stuffs. It focus on how to qui
 * `uuid()`: return a random UUID (v4).
 * `color()`: return hexadecimal code of a random color
 * `contrastColor(hexcolor)`: return a random color which is contrast to given color. It's useful when you need to generate a pair of background/foreground color or a set of color scheme for charts.
+* `flipCoin`: simulate a coin flipping - which return either `head` or `tail`
 * `card(mode)`: pick a random card in a deck.
   * `mode`: specify how we returned deck's 4 suits
     * `long`: default - "Spade", "Heart", "Diamond", "Club"
     * `short`: "S", "H", "D", "C"
     * `symbol`: "♠", "♥", "♦", "♣"
-
