@@ -1,6 +1,6 @@
 {
   "name": "rand-lib",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A library to randomly generate every stuffs from general things like number,character,...to freaky things like poker cards.",
   "main": "rand.js",
   "scripts": {
